@@ -1,1 +1,16 @@
-<p>posts works!</p>
+<app-post-form  (newPost)="addNewPostForm($event)" ></app-post-form>
+<h2>Posts</h2>
+<div class="card mb-2" *ngFor="let posty of posts">
+  <div class="card-body">
+    <h2> <a routerLink="/post/{{posty.id}}"> {{ posty.title| titlecase}}</a> </h2>
+    <p>  {{ posty.body}} </p>
+    <hr>
+    <button class="btn btn-danger">
+      <i class="fa fa-remove"></i>
+    </button>
+    <button class="btn btn-primary ml-2">
+      <i class="fa fa-pencil"></i>
+    </button>
+  </div>
+</div>
+
